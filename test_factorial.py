@@ -5,19 +5,13 @@ import pytest
 
 # Happy paths
 
-# def test_factorial__return_the_factorial__when_the_number_is_positive_v1():
-#    assert factorial(2) == 2
-
-def test_factorial__return_the_number_one__when_the_number_is_one_v2():
-
+def test_factorial__return_the_factorial_of_the_number__when_the_number_is_positive():
+    
     assert factorial(1) == 1
-
-def test_factorail__return_the_number_six__when_the_number_is_three():
-
+    assert factorial(2) == 2
     assert factorial(3) == 6
 
 def test_factorail__return_a_positive_number__when_the_number_is_positive():
-
     number = randint(1, 10)
 
     assert factorial(number) > 0 
