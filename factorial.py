@@ -1,12 +1,15 @@
+from constants import STRING_INVALID_ARGUMENT, NEGATIVE_INVALID_ARGUMENT
+
+
 class InvalidArgumentException(Exception):
     pass
 
 
 def factorial_v1(num):
     if not isinstance(num, int):
-        raise InvalidArgumentException("A string argument was passed, integer is required")
+        raise InvalidArgumentException(STRING_INVALID_ARGUMENT)
     if num < 0:
-        raise InvalidArgumentException("A negative number was passed, integer is required")
+        raise InvalidArgumentException(NEGATIVE_INVALID_ARGUMENT)
     if num == 0:
         return 1
     if num == 1:
@@ -16,9 +19,9 @@ def factorial_v1(num):
 
 def factorial_v2(num):
     if not isinstance(num, int):
-        raise InvalidArgumentException("A string argument was passed, integer is required")
+        raise InvalidArgumentException(STRING_INVALID_ARGUMENT)
     if num < 0:
-        raise InvalidArgumentException("A negative number was passed, integer is required")
+        raise InvalidArgumentException(NEGATIVE_INVALID_ARGUMENT)
     if num == 0:
         return 1
     else:
@@ -26,12 +29,12 @@ def factorial_v2(num):
 
 def factorial(num):
     """Function to calculate the factorial of a number."""
-    
+
     if not isinstance(num, int):
-        raise InvalidArgumentException("A string argument was passed, integer is required")
+        raise InvalidArgumentException(STRING_INVALID_ARGUMENT)
     if num < 0:
-        raise InvalidArgumentException("A negative number was passed, integer is required")
-    
+        raise InvalidArgumentException(NEGATIVE_INVALID_ARGUMENT)
+
     return num * factorial(num - 1) if num else 1
 
 
