@@ -28,7 +28,12 @@ def factorial_v2(num):
         return num * factorial_v2(num - 1)
 
 def factorial(num):
-    """Function to calculate the factorial of a number."""
+    """
+    Factorial function
+
+    :arg num: Number
+    :returns: factorial of num
+    """
 
     if not isinstance(num, int):
         raise InvalidArgumentException(STRING_INVALID_ARGUMENT)
