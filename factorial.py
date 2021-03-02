@@ -6,6 +6,9 @@ class InvalidArgumentException(Exception):
 
 
 def factorial_v1(num):
+    """
+    Factorial v1
+
     if not isinstance(num, int):
         raise InvalidArgumentException("A string argument was passed, integer is required" )
     if num < 0:
@@ -16,8 +19,13 @@ def factorial_v1(num):
         return 1
     else:
         return num * factorial_v1(num - 1)
+    """
+    pass
 
 def factorial_v2(num):
+    """
+    Factorial v2
+
     if not isinstance(num, int):
         raise InvalidArgumentException("A string argument was passed, integer is required" )
     if num < 0:
@@ -26,6 +34,8 @@ def factorial_v2(num):
         return 1
     else:
         return num * factorial_v2(num - 1)
+    """
+    pass
 
 def factorial(num: int) -> int:
     """
