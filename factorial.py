@@ -1,4 +1,4 @@
-from constants import STRING_INVALID_ARGUMENT, NEGATIVE_INVALID_ARGUMENT
+from constants import NON_NUMBER_INVALID_ARGUMENT, NEGATIVE_INVALID_ARGUMENT
 
 
 class InvalidArgumentException(Exception):
@@ -7,9 +7,9 @@ class InvalidArgumentException(Exception):
 
 def factorial_v1(num):
     if not isinstance(num, int):
-        raise InvalidArgumentException(STRING_INVALID_ARGUMENT)
+        raise InvalidArgumentException("A string argument was passed, integer is required" )
     if num < 0:
-        raise InvalidArgumentException(NEGATIVE_INVALID_ARGUMENT)
+        raise InvalidArgumentException("A negative number was passed, integer is required" )
     if num == 0:
         return 1
     if num == 1:
@@ -19,15 +19,15 @@ def factorial_v1(num):
 
 def factorial_v2(num):
     if not isinstance(num, int):
-        raise InvalidArgumentException(STRING_INVALID_ARGUMENT)
+        raise InvalidArgumentException("A string argument was passed, integer is required" )
     if num < 0:
-        raise InvalidArgumentException(NEGATIVE_INVALID_ARGUMENT)
+        raise InvalidArgumentException("A negative number was passed, integer is required" )
     if num == 0:
         return 1
     else:
         return num * factorial_v2(num - 1)
 
-def factorial(num):
+def factorial(num: int) -> int:
     """
     Factorial function
 
@@ -36,7 +36,7 @@ def factorial(num):
     """
 
     if not isinstance(num, int):
-        raise InvalidArgumentException(STRING_INVALID_ARGUMENT)
+        raise InvalidArgumentException(NON_NUMBER_INVALID_ARGUMENT)
     if num < 0:
         raise InvalidArgumentException(NEGATIVE_INVALID_ARGUMENT)
 
