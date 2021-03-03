@@ -1,6 +1,6 @@
-from src.basic_calculator import BasicCalculator
-from src.exceptions import InvalidArgumentException
-from src.constants import NON_NUMBER_INVALID_ARGUMENT, NEGATIVE_INVALID_ARGUMENT
+from calculator.basic_calculator import BasicCalculator
+from calculator.exceptions import InvalidArgumentException
+from calculator.constants import NON_NUMBER_INVALID_ARGUMENT, NEGATIVE_INVALID_ARGUMENT
 
 
 class Calculator():

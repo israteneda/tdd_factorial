@@ -1,4 +1,4 @@
-from src.exceptions import InvalidArgumentException
+from calculator.exceptions import InvalidArgumentException
 from tests.data.constants import NON_NUMBER_INVALID_ARGUMENT, NEGATIVE_INVALID_ARGUMENT
 import pytest
 
