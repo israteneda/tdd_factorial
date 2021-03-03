@@ -1,5 +1,7 @@
-# TDD Factorial
+# Calculator
 
-A TDD practice with factorial function.
+TDD practice.
+
+Program to generate factorial and fibonacci serie.
 
 [![codecov](https://codecov.io/gh/israteneda/tdd_factorial/branch/main/graph/badge.svg?token=BZ3AUSI6QV)](https://codecov.io/gh/israteneda/tdd_factorial)
