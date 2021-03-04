@@ -1,21 +1,21 @@
 from calculator.main import Calculator
 from calculator.basic_calculator import BasicCalculator
-import pytest
+from pytest import fixture
 
 
-@pytest.fixture
+@fixture
 def basic_calculator():
     basic_calculator = BasicCalculator()
     yield basic_calculator
 
 
-@pytest.fixture
+@fixture
 def calculator():
     calculator = Calculator(basic_calculator=None)
     yield calculator
 
 
-@pytest.fixture
+@fixture
 def random_number_generator():
     import random
 

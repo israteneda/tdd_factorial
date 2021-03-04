@@ -1,6 +1,5 @@
 from calculator.basic_calculator import BasicCalculator
-from calculator.exceptions import InvalidArgumentException
-from calculator.constants import NON_NUMBER_INVALID_ARGUMENT, NEGATIVE_INVALID_ARGUMENT
+from calculator.validators import check_negative_number, check_invalid_argument
 
 
 class Calculator():
@@ -8,20 +7,30 @@ class Calculator():
     def __init__(self, basic_calculator: BasicCalculator):
         pass
 
+    @check_invalid_argument
+    @check_negative_number
     def factorial(self, num: int) -> int:
         """
-        Factorial function
+        Returns the factorial of a num
 
-        :arg num: Number
-        :returns: factorial of num
+        Parameter:
+            num (int): number to calculate the factorial
+
+        Returns:
+           factorial (int): factorial of a num
         """
+        factorial = num * self.factorial(num - 1) if num else 1
+        return factorial
 
-        if not isinstance(num, int):
-            raise InvalidArgumentException(NON_NUMBER_INVALID_ARGUMENT)
-        if num < 0:
-            raise InvalidArgumentException(NEGATIVE_INVALID_ARGUMENT)
+    @check_invalid_argument
+    @check_negative_number
+    def fibonacci(self, top: int) -> int:
+        """
+        Returns the fibonacci sequence
 
-        return num * self.factorial(num - 1) if num else 1
-
-    def fibonacci(top: int) -> int:
+        Parameter:
+            top (int): top limit
+        Returns:
+            fibonacci_sequence (list[int]): fibonacci sequence
+        """
         pass
