@@ -1,4 +1,5 @@
 from calculator.exceptions import InvalidArgumentException
+from calculator.main import Calculator
 from tests.data.constants import NON_NUMBER_INVALID_ARGUMENT, NEGATIVE_INVALID_ARGUMENT
 import pytest
 
@@ -6,7 +7,7 @@ import pytest
 # Happy paths
 
 
-def test_factorial__return_the_factorial_of_the_number__when_the_number_is_positive(calculator):
+def test_factorial__return_the_factorial_of_the_number__when_the_number_is_positive(calculator: Calculator):
     assert calculator.factorial(1) == 1
     assert calculator.factorial(2) == 2
     assert calculator.factorial(3) == 6
@@ -14,34 +15,37 @@ def test_factorial__return_the_factorial_of_the_number__when_the_number_is_posit
     assert calculator.factorial(10) == 3628800
 
 
-def test_factorial__return_a_positive_number__when_the_number_is_positive(random_number_generator, calculator):
+def test_factorial__return_a_positive_number__when_the_number_is_positive(
+        random_number_generator,
+        calculator: Calculator
+    ):
     number: int = random_number_generator()
 
     assert calculator.factorial(number) > 0
 
 
-def test_factorial__return_one__when_the_number_is_zero(calculator):
+def test_factorial__return_one__when_the_number_is_zero(calculator: Calculator):
     assert calculator.factorial(0) == 1
 
 
 # Edge cases 
 
 
-def test_factorial__raise_an_exception__when_the_number_is_a_string(calculator):
+def test_factorial__raise_an_exception__when_the_number_is_a_string(calculator: Calculator):
     with pytest.raises(InvalidArgumentException) as e:
         calculator.factorial("cinco")
 
     assert str(e.value) == NON_NUMBER_INVALID_ARGUMENT
 
 
-def test_factorial__raise_an_exception__when_the_number_is_float(calculator):
+def test_factorial__raise_an_exception__when_the_number_is_float(calculator: Calculator):
     with pytest.raises(InvalidArgumentException) as e:
         calculator.factorial(5.5)
 
     assert str(e.value) == NON_NUMBER_INVALID_ARGUMENT
 
 
-def test_factorial__raise_an_exception__when_the_number_is_negative(calculator):
+def test_factorial__raise_an_exception__when_the_number_is_negative(calculator: Calculator):
     with pytest.raises(InvalidArgumentException) as e:
         calculator.factorial(-1)
 
