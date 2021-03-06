@@ -19,6 +19,7 @@ class Calculator():
         Returns:
            res (int): factorial of a num
         """
+
         res = num * self.factorial(num - 1) if num else 1
         return res
 
@@ -33,12 +34,13 @@ class Calculator():
         Returns:
             fibonacci_sequence (list[int]): fibonacci sequence
         """
+
         fibonacci_sequence: List[int] = [0, 1]
         num: int = 1
         previous_num: int = 0
 
         while num <= top:
-            aux:int = num
+            aux: int = num
             num = self.basic_calculator.sum(previous_num, num)
             fibonacci_sequence.append(num)
             previous_num = aux
