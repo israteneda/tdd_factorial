@@ -3,16 +3,10 @@ from tests.data.constants import NON_NUMBER_INVALID_ARGUMENT, NEGATIVE_INVALID_A
 import pytest
 
 
-def test_fibonacci__check_if_fibonacci_function_exists__when_the_program_runs(mocker, calculator):
-    fibonacci = mocker.spy(calculator, 'fibonacci')
-    calculator.fibonacci(1)
-    fibonacci.assert_called_with(1)
-
-
 # Happy paths
 
 
-def factorial__return_the_factorial_of_the_number__when_the_number_is_positive(calculator):
+def test_factorial__return_the_factorial_of_the_number__when_the_number_is_positive(calculator):
     assert calculator.factorial(1) == 1
     assert calculator.factorial(2) == 2
     assert calculator.factorial(3) == 6
@@ -20,13 +14,13 @@ def factorial__return_the_factorial_of_the_number__when_the_number_is_positive(c
     assert calculator.factorial(10) == 3628800
 
 
-def test_factorail__return_a_positive_number__when_the_number_is_positive(random_number_generator, calculator):
-    number = random_number_generator()
+def test_factorial__return_a_positive_number__when_the_number_is_positive(random_number_generator, calculator):
+    number: int = random_number_generator()
 
     assert calculator.factorial(number) > 0
 
 
-def test_factorail__return_one__when_the_number_is_zero(calculator):
+def test_factorial__return_one__when_the_number_is_zero(calculator):
     assert calculator.factorial(0) == 1
 
 

@@ -38,7 +38,7 @@ class Calculator():
         previous_num: int = 0
 
         while num <= top:
-            aux = num
+            aux:int = num
             num = self.basic_calculator.sum(previous_num, num)
             fibonacci_sequence.append(num)
             previous_num = aux
