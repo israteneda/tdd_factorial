@@ -1,17 +1,16 @@
 from calculator.main import Calculator
-from calculator.basic_calculator import BasicCalculator
 from pytest import fixture
 
 
-@fixture
-def basic_calculator():
-    basic_calculator = BasicCalculator()
-    yield basic_calculator
+class BasicCalculator():
+    def sum(self, a, b):
+        return a + b
 
 
 @fixture
 def calculator():
-    calculator = Calculator(basic_calculator=None)
+    basic_calculator: BasicCalculator = BasicCalculator()
+    calculator = Calculator(basic_calculator)
     yield calculator
 
 
