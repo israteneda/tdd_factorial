@@ -28,7 +28,7 @@ def test_factorial__return_one__when_the_number_is_zero(calculator: Calculator):
     assert calculator.factorial(0) == 1
 
 
-# Edge cases 
+# Sad paths
 
 
 def test_factorial__raise_an_exception__when_the_number_is_a_string(calculator: Calculator):
