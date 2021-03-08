@@ -1,10 +1,11 @@
+from calculator.basic_calculator import BasicCalculator
 from calculator.validators import check_negative_number, check_invalid_argument
 from typing import List
 
 
-class Calculator():
+class Calculator:
 
-    def __init__(self, basic_calculator):
+    def __init__(self, basic_calculator: BasicCalculator):
         self.basic_calculator = basic_calculator
 
     @check_invalid_argument

@@ -1,16 +1,17 @@
+from calculator.basic_calculator import BasicCalculator
 from calculator.main import Calculator
 from pytest import fixture
 
 
-class BasicCalculator():
-    def sum(self, a, b):
-        return a + b
+def mock_sum(a, b):
+    return a + b
 
 
 @fixture
-def calculator():
-    basic_calculator: BasicCalculator = BasicCalculator()
-    calculator = Calculator(basic_calculator)
+def calculator(mocker):
+    mock_basic_calculator: BasicCalculator = mocker.Mock(BasicCalculator)
+    mock_basic_calculator.sum = mocker.Mock(side_effect=mock_sum)
+    calculator = Calculator(mock_basic_calculator)
     yield calculator
 
 
