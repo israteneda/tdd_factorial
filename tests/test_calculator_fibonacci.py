@@ -80,7 +80,7 @@ def test_fibonacci_return_the_fibonacci_sequence__when_the_number_is_nine(mocker
     assert result == [0, 1, 1, 2, 3, 5, 8]
 
 
-def test_fibonacci_return_the_fibonacci_sequence__when_the_number_is_nine(mocker):
+def test_fibonacci_return_the_fibonacci_sequence__when_the_number_is_one_thousand(mocker):
     mock_basic_calculator = mocker.Mock()
     mock_basic_calculator.sum = mocker.Mock(
         side_effect=[1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]
